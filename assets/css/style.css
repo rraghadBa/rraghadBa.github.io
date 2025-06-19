@@ -1,14 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-
-/* VARIABLES CSS*/
 :root{
     /*color*/
     --hue-color:242;
-
-
     /*HSL Color mode*/
-    
-  
     --skin-color:hsla(262, 78%, 47%, 0.938) ;
     --title-color: hsl(var(--hue-color), 8%, 95%);
     --text-color: hsl(var(--hue-color), 8%, 85%);
@@ -19,17 +13,13 @@
 
     --body-font: 'poppins',sans-serif;
 
-   
 
      /*animation properties */
      --animation-duration: 1s;
      --animation-timing-function: linear;
      --animation-timeline: view();
      --animation-range: entry 0% cover 40%;
-    --filter: blur(0);
-    
-
-
+     --filter: blur(0);
     
 
 /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
@@ -73,6 +63,21 @@
     }
 }
 
+
+.block {
+    animation: appear var(--animation-duration) var(--animation-timing-function);
+    
+}
+
+@supports (animation-timeline: view()) {
+    .block {
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: 0% 100%;
+    }
+}
+
+
 /* Responsive Typography */
 @media screen and (max-width: 1024px) {
     :root {
@@ -82,10 +87,8 @@
         --h3-font-size: 1.125rem;
         --normal-font-size: .938rem;
         --small-font-size: .813rem;
-        --smaller-font-size: .75rem;
-    }
+        --smaller-font-size: .75rem;}
 }
-
 
 /*BASE*/
 *{
@@ -153,16 +156,11 @@ button,input{
 
 
  /*REUSABLE CSS CLASSES*/
-
-
-
 .section_title{
     text-align: center;
     font-size: var(--h1-font-size);
     
  }
-
-
 
 /*SIDEBAR*/
 .sidebar{
@@ -227,13 +225,9 @@ button,input{
     transition: .4s;
 }
 
-
-
 /*Active Link*/
 .nav__link.active-link, .nav__link:hover{
             color: var(--skin-color);
-
-
 }
 
 .nav__link.active-link::after, .nav__link:hover::after{
@@ -255,7 +249,6 @@ button,input{
     margin-left: 100px;
 
 }
-
 
 /*HOME SECTION*/
 .home{
@@ -421,20 +414,18 @@ button,input{
 
 }
 
-     /*    ABOUT SECTION    */
-
-     .about {
+     /*ABOUT SECTION */
+.about {
         display: flex;
         flex-direction: column;
         padding: 20px; 
         margin: 100px;
         animation: appear var(--animation-duration) var(--animation-timing-function);
         animation-timeline: var(--animation-timeline);
-        animation-range: var(--animation-range);
-        
+        animation-range: var(--animation-range);  
     }
     
-    .about__container {
+.about__container {
         display: flex;
         justify-content: center; 
         align-items: center;
@@ -442,9 +433,7 @@ button,input{
         padding: 20px; 
         column-gap: 3rem;
     }
-    
-    
-    .about__data {
+.about__data {
         max-width: 100%; 
         width: 500px;
         background-color: rgb(26, 26, 26); 
@@ -458,7 +447,7 @@ button,input{
     }
     
     
-    .about__title {
+.about__title {
         display: flex;
         justify-content: center; 
         align-items: center; 
@@ -469,12 +458,9 @@ button,input{
         margin: 0; 
         padding: 20px; 
         letter-spacing: 2px;
-        
-        
-    }
+ }
 
-
-    .about__heading {
+.about__heading {
         font-size: 2rem; 
         font-weight: var(--font-bold); 
         color: white; 
@@ -486,7 +472,7 @@ button,input{
         padding-bottom: 30px;
     }
     
-    .about__description {
+.about__description {
         font-size: 1.1rem; 
         text-align: justify; 
         line-height: 1.8; 
@@ -499,45 +485,45 @@ button,input{
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         margin-bottom: 20px; 
     }
+
     
     /* Responsive Design */
-    @media (min-width: 1150px) {
-        .about {
-            flex-direction: row; 
-            height: 100vh; 
-        }
+@media (min-width: 1150px) {
 
-
-    
-        .about__container {
-            justify-content: flex-end; 
-            margin-right: 20px; 
-        }
-    
-        .about__data {
-            height: 400px; 
+    .about {
+    flex-direction: row; 
+    height: 100vh; 
+    }
+            
+    .about__container {
+    justify-content: flex-end; 
+    margin-right: 20px; 
+    }
+            
+    .about__data {
+    height: 400px; 
         }
 }
 
 @media only screen and (max-width: 768px) {
         
-            .about {
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
-        margin: 0px;
+    .about {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 0px;
    }
+
    .skills{
     min-height: 50vh;
    }
+
    #experience {
     min-height: 50vh !important;
    }
 }
 
-
-
-/*    SKILLS SECTION    */
+/*SKILLS SECTION*/
 
 .skills{
     justify-content: center;
@@ -653,25 +639,21 @@ button,input{
 
 }
 
-        /*===experience====*/
-
-        #experience{
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+/*===experience====*/
+#experience{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
         }
 .ex__container{
     padding: 20px;
     margin: 20px;
- 
     justify-content: center;
     animation: appear var(--animation-duration) var(--animation-timing-function);
     animation-timeline: var(--animation-timeline);
-    animation-range: var(--animation-range);
-    
-
+    animation-range: var(--animation-range);  
 }
 .section__title{
     font-size: var(--biggest-font-size);
@@ -684,29 +666,25 @@ button,input{
     margin-bottom: var(--mb-2);
 
 }
-
 .timeline {
-    display: flex; /* Make the timeline container a flexbox */
-    gap: 4rem; /* Add spacing between items */
-    justify-content: center; /* Center the items horizontally */
+    display: flex; 
+    gap: 4rem;
+    justify-content: center; 
     
 }
-
 .timeline__item{
     position: relative;
     padding-left: 3rem;
-    margin-bottom: 0; /* Remove vertical margin */
-    flex: 1; /* Allow items to grow and take equal space */
-    min-width: 400px; /* Set a minimum width for each item */
+    margin-bottom: 0;
+    flex: 1;
+    min-width: 400px; 
     max-width: 100%;
     padding-right: 20px;
 }
-
 .timeline__item:last-child{
     margin-bottom: 0;
 
 }
-
 .timeline__item::before{
     content: '';
     width: 1px;
@@ -716,7 +694,6 @@ button,input{
     height: 100%;
     background-color:var(--skin-color) ;
 }
-
 .circle__dot{
     position: absolute;
     left: 0;
@@ -730,24 +707,17 @@ button,input{
 }
 
 .timeline__item:hover .circle__dot{
-    background-color: var(--body-color);
-     
+    background-color: var(--body-color); 
 }
-
 .timeline__title{
     font-size: var(--h2-font-size);
     font-weight: var(--font-bold);
     margin-bottom: var(--mb-0-25);
-
 }
-
-
 .timeline__text{
     font-size: var(--normal-font-size);
     margin-bottom: var(--mb-1);
-
 }
-
 .timeline__date{
     display: flex;
     align-items: center;
@@ -755,16 +725,13 @@ button,input{
     font-size: var(--small-font-size);
     color: var(--skin-color);
 }
-
 .section__title{
     margin-bottom: var(--mb-2);
     display: flex;
     justify-content: center;
 }
 
-
-
-        /*work section*/
+    /*work section*/
 .work__container{
    
     grid-template-columns: repeat(3,330px);
@@ -792,7 +759,6 @@ button,input{
 
 }
 
-
 @keyframes appear2 {
     from {
         opacity: 0;
@@ -809,9 +775,7 @@ button,input{
     border-radius: .5rem;
     animation: appear2 var(--animation-duration) var(--animation-timing-function);
     animation-timeline: var(--animation-timeline);
-    animation-range: var(--animation-range);
-
-    
+    animation-range: var(--animation-range);    
 }
 
 .work__card:not(2){
@@ -830,11 +794,7 @@ button,input{
     display: none;
 }
 
-
-
 .work__img{
-   
-    /* aspect-ratio: 3/2; */
     object-fit:fill;
     border-radius: 1rem;
 
@@ -864,19 +824,16 @@ button,input{
 
 .work__button:hover .work__button-icon{
     transform: translateX(.25rem);
-
-
 }
-
 .effect {
     padding: 10px;
     &:before, &:after {
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      border-style: solid;
-      border-color: var(--skin-color);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-style: solid;
+    border-color: var(--skin-color);
 }
 
 &:before {
@@ -892,9 +849,7 @@ button,input{
 }
 }
 
-
-
-        /*Active item work section*/
+/*Active item work section*/
 .active-work{
     background-color: var(--skin-color);
     color: var(--title-color);
@@ -903,7 +858,6 @@ button,input{
 
 
    /*------portfolio__popup----*/
-
 
 .portfolio__popup{
     position: fixed;
@@ -929,11 +883,11 @@ button,input{
     visibility: visible;
 }
 
-
-
 .portfolio__item-inner{
     background-color: var(--box-color);
-    width: 900px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
     border-radius: .5rem;
     padding: 2.5rem;
     position: relative;
@@ -1000,11 +954,6 @@ button,input{
 
 }
 
-/*******************8*********/
-
-
-
-
     /*link */
 .details__info li a{
     text-transform: lowercase;
@@ -1038,17 +987,16 @@ button,input{
 
 .heart__icon {
     font-size: 1.5rem;
-    margin: 0 5px; /* Add some spacing around the heart */
-    color: #fe2a2a; /* Set the heart color */
-    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for size and color */
-    cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+    margin: 0 5px; 
+    color: #fe2a2a; 
+    transition: transform 0.3s ease, color 0.3s ease;
+    cursor: pointer; 
 
 }
 
 .heart__icon:hover {
-    transform: scale(1.2); /* Increase the size by 20% */
+    transform: scale(1.2); 
 }
-
 
 
 /*----SCROLL BAR----*/
@@ -1066,9 +1014,7 @@ button,input{
     
 }
 
-/* ================================================================
-                   Mobile Menu Styles
-============================================ */
+    /* Mobile Menu Styles */
 .nav__icon {
     font-size: 1.25rem;
     margin-right: 1rem;
@@ -1136,7 +1082,7 @@ button,input{
         position: fixed;
         width: 280px;
         height: 100vh;
-        background-color: var(--body-color);
+          background-color: rgba(255, 255, 255, 0.017);
         border-left: 2px solid var(--box-color);
         right: -280px;
         top: 0;
@@ -1220,14 +1166,14 @@ button,input{
     }
 
     .nav__link.active-link::after, .nav__link:hover::after {
-        display: none; /* Remove the dot for mobile */
+        display: none; 
     }
 
     .nav__link.active-link {
         background: var(--box-color);
         color: var(--skin-color);
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-        transform: translateX(8px);
+       
     }
 
     .nav__link.active-link .nav__icon {
@@ -1371,46 +1317,107 @@ button,input{
     }
 }
 
-/*=============== HOME RESPONSIVE STYLES ===============*/
+/* HOME RESPONSIVE STYLES */
 /* For small devices - phones */
 @media screen and (max-width: 480px) {
-    
-    .home__main {
-        padding: 0 1rem;
+
+    .home {
+        padding: 1rem 1rem 2rem; 
+        margin-top: 0 !important;
+        min-height: auto !important;
+        height: auto !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
+    .home__main {
+        padding: 0 1rem;
+        margin: 0;
+        width: 100%;
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    
+.home__social {
+    position: static; 
+    margin-top: 2rem; 
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+
+    .home__img img {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        border-width: 10px;
+        margin: 0 auto;
+    }
+
+   
     .home__title {
         font-size: 2.2rem;
         line-height: 1.2;
+        margin-top: 1rem;
         margin-bottom: 0.5rem;
+        text-align: center;
     }
 
     .home__subtitle {
         font-size: 1rem;
         margin-bottom: 1rem;
+        text-align: center;
     }
 
     .home__description {
         font-size: 0.9rem;
-        margin-bottom: 1.5rem;
+      
+        text-align: center;
+         margin-bottom: 2.5rem;
+    }
+ 
+   
+.home__img {
+    display: flex;
+    justify-content: center;
+}
+
+.home__img img {
+    width: 100%;
+    max-width: 200px; 
+    height: auto;
+    border-width: 6px;
+    margin-bottom: 2rem;
+}
+
+
+.home__social {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;     
+    gap: 0.5rem;            
+    margin-top: 1rem;        
+}
+
+
+.home__social-follow::after {
+        display: none;
     }
 
-    .home__img img {
-        width: 200px;
-        height: 200px;
-        border-width: 6px;
-    }
 
-    .home__social {
-        position: relative;
-        flex-wrap: wrap;
-        justify-content: center;
-        row-gap: 1rem;
-    }
-
-    .home__social-follow {
-        font-size: 0.9rem;
-    }
+.home__social-follow {
+    margin-bottom: 0.5rem;  
+}
 
     .my__info {
         display: flex;
@@ -1474,11 +1481,14 @@ button,input{
         margin-inline: auto;
     }
 
-    .home__img img {
-        width: 280px;
-        height: 280px;
-        border-width: 8px;
-    }
+ .home__img img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-width: 10px;
+    margin: 0 auto;
+}
+
 
     .home__social {
         position: relative;
@@ -1506,7 +1516,7 @@ button,input{
     }
 }
 
-/* For large devices - small laptops */
+/* For large devices */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .home__container {
         padding: 6rem 2rem 0;
@@ -1534,7 +1544,7 @@ button,input{
     }
 }
 
-/* For extra large devices - laptops and desktops */
+/* For large devices - laptops and desktops */
 @media screen and (min-width: 1024px) {
     .home__container {
         padding: 6rem 3rem 0;
@@ -1545,22 +1555,26 @@ button,input{
     }
 }
 
-/* For 2K & 4K resolutions */
 @media screen and (min-width: 1440px) {
     .home__container {
         max-width: 1400px;
         margin-inline: auto;
     }
 
+/****************************/
     .home__img img {
-        width: 450px;
-        height: 450px;
-        border-width: 12px;
-    }
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    border-width: 10px;
+    margin: 0 auto;
 }
 
-/*=============== EXPERIENCE RESPONSIVE STYLES ===============*/
-/* For small devices - phones */
+}
+
+        /* EXPERIENCE RESPONSIVE STYLES*/
+        /* For small devices*/
+
 @media screen and (max-width: 480px) {
     .experience.section {
         padding: 4rem 1rem 2rem;
@@ -1603,7 +1617,7 @@ button,input{
     }
 }
 
-/* For medium devices - tablets */
+/* For medium devices*/
 @media screen and (min-width: 481px) and (max-width: 767px) {
     .experience.section {
         padding: 5rem 1.5rem 2rem;
@@ -1638,7 +1652,7 @@ button,input{
     }
 }
 
-/* For large devices - small laptops */
+/* For large devices */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .experience.section {
         padding: 6rem 2rem;
@@ -1656,7 +1670,7 @@ button,input{
     }
 }
 
-/* For extra large devices - laptops and desktops */
+/* For extra large devices */
 @media screen and (min-width: 1024px) {
     .ex__container {
         max-width: 1000px;
@@ -1683,8 +1697,9 @@ button,input{
 
 }
 
-/*=============== PROJECTS RESPONSIVE STYLES ===============*/
-/* For small devices - phones */
+/* PROJECTS RESPONSIVE STYLES */
+/* For small devices  */
+
 @media screen and (max-width: 480px) {
     .work__container {
         grid-template-columns: 1fr;
@@ -1737,7 +1752,8 @@ button,input{
     }
 }
 
-/* For medium devices - tablets */
+/* For medium devices  */
+
 @media screen and (min-width: 481px) and (max-width: 767px) {
     .work__container {
         grid-template-columns: repeat(2, 1fr);
@@ -1766,7 +1782,8 @@ button,input{
     }
 }
 
-/* For large devices - small laptops */
+/* For large devices  */
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
     .work__container {
         grid-template-columns: repeat(2, 1fr);
@@ -1794,7 +1811,7 @@ button,input{
     }
 }
 
-/* For extra large devices - laptops and desktops */
+/* For extra large devices  */
 @media screen and (min-width: 1024px) {
     .work__container {
         grid-template-columns: repeat(3, 1fr);
@@ -1824,6 +1841,7 @@ button,input{
 }
 
 /* For 2K & 4K resolutions */
+
 @media screen and (min-width: 1440px) {
     .work__container {
         max-width: 1400px;
@@ -1940,7 +1958,6 @@ button,input{
     }
 }
 
-/* Add hover effects for larger screens */
 @media screen and (min-width: 768px) {
     .skills__header {
         transition: transform 0.3s ease;
@@ -1988,7 +2005,6 @@ button,input{
     }
 }
 
-/* Add these new styles */
 .home__img img {
     width: 320px;
     height: auto;
