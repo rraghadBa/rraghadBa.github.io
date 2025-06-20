@@ -77,6 +77,13 @@
     }
 }
 
+@supports not (animation-timeline: view()) {
+    .block {
+        animation: appear 1s ease-in-out forwards;
+    }
+}
+
+
 
 /* Responsive Typography */
 @media screen and (max-width: 1024px) {
