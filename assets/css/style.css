@@ -84,7 +84,6 @@
 }
 
 
-
 /* Responsive Typography */
 @media screen and (max-width: 1024px) {
     :root {
@@ -340,6 +339,8 @@ button,input{
     font-size: var(--h3-font-size);
     font-weight: var(--font-medium);
     margin-bottom: var(--mb-0-75);
+    word-break: break-word;
+    max-width: 100%;
 }
 
 .home__description{
@@ -362,7 +363,7 @@ button,input{
     align-items: center;
     bottom: 1.5rem;
     padding-top: 1rem;
-   
+    flex-wrap: nowrap;
 }
 
 .info__title, .info__subtitle{
@@ -377,9 +378,10 @@ button,input{
 }
 
 .info__icon{
-    font-size: 1.8rem;
     color: var(--skin-color);
-    margin-right: var(--mb-0-75);
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
 }
 
 .button{
@@ -1384,6 +1386,10 @@ button,input{
         font-size: 1rem;
         margin-bottom: 1rem;
         text-align: center;
+        white-space: nowrap;     /* ✅ Keeps the email on one line */
+    overflow: hidden;        /* ✅ Hides overflow if needed */
+    text-overflow: ellipsis; /* ✅ Adds "..." if text still overflows */
+    max-width: 100%;        
     }
 
     .home__description {
@@ -1434,15 +1440,13 @@ button,input{
         padding: 1rem;
     }
 
-    .info__item {
-        width: 100%;
-        padding: 1rem;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        
-    }
+.info__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;  /* space between icon and text */
+  padding-top: 1rem;
+  flex-wrap: nowrap; /* prevent wrapping */
+}
 
     .info__icon {
         font-size: 1.5rem;
@@ -1455,9 +1459,21 @@ button,input{
     }
 
     .info__subtitle {
-        font-size: 0.85rem;
-        word-break: break-all;
-    }
+        font-size: 0.80rem;
+        max-width: 100%;
+        display: inline-block;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        font-weight: 400;
+        }
+
+ .info__text-group {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 }
 
 /* For medium devices - tablets */
